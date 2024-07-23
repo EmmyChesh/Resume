@@ -80,9 +80,13 @@ section = st.sidebar.radio(
     ["Introduction", "Experience & Qualifications", "Skills", "Work History", "Projects & Accomplishments"]
 )
 
+# Function to apply custom styles to headers
+def section_header(header):
+    st.markdown(f"<h2 style='color:blue;'>{header}</h2>", unsafe_allow_html=True)
+
 # --- HERO SECTION ---
 if section == "Introduction":
-    st.image(profile_pic, width=150, use_column_width=True)
+    st.image(profile_pic, width=120, use_column_width=True)
     st.title(NAME)
     st.write(DESCRIPTION)
     st.write(f"📫 {EMAIL}")
@@ -113,10 +117,11 @@ if section == "Introduction":
         """,
         unsafe_allow_html=True,
     )
+    
 
 # --- EXPERIENCE & QUALIFICATIONS ---
 elif section == "Experience & Qualifications":
-    st.subheader("Experience & Qualifications")
+    section_header("Experience & Qualifications")
     st.write(
         """
     - ✔️ 5+ years of experience extracting actionable insights from data
@@ -130,7 +135,7 @@ elif section == "Experience & Qualifications":
 
 # --- SKILLS ---
 elif section == "Skills":
-    st.subheader("Skills")
+    section_header("Skills")
     skills = [
         ("👨‍💻 Programming", "Python"),
         ("🔄 Data Processing/Wrangling", "Pandas, Numpy"),
@@ -149,7 +154,7 @@ elif section == "Skills":
 
 # --- WORK HISTORY ---
 elif section == "Work History":
-    st.subheader("Work History")
+    section_header("Work History")
     st.write("---")
 
     # --- JOB 1
@@ -165,7 +170,8 @@ elif section == "Work History":
     """
     )
 
-     # --- JOB 1
+     # --- JOB 2
+    st.write('\n')
     st.write("🚧", "**Data Analytics Instructor | The CoreStream Nigeria**")
     st.write("Jun. 2024 - Present")
     st.write(
@@ -178,7 +184,7 @@ elif section == "Work History":
     """
     )
 
-    # --- JOB 2
+    # --- JOB 3
     st.write('\n')
     st.write("🚧", "**Full Stack Data Science Facilitator | 10alytics Edtech Hub**")
     st.write("Jul. 2023 - Nov. 2023")
@@ -191,7 +197,7 @@ elif section == "Work History":
     """
     )
 
-    # --- JOB 3
+    # --- JOB 4
     st.write('\n')
     st.write("🚧", "**Data Science Instructor | PICTDA (Plateau State Information and Communication Technology Development Agency)**")
     st.write("Sept. 2022 - Sept. 2023")
@@ -205,7 +211,7 @@ elif section == "Work History":
     """
     )
 
-    # --- JOB 4
+    # --- JOB 5
     st.write('\n')
     st.write("🚧", "**Data Analyst | CYPA Africa And Equity International Initiative**")
     st.write("Feb. 2023 - Feb. 2023")
@@ -219,7 +225,7 @@ elif section == "Work History":
     """
     )
 
-    # --- JOB 5
+    # --- JOB 6
     st.write('\n')
     st.write("🚧", "**Researcher | CAFOD UK | Jos Plateau State Nigeria**")
     st.write("Mar. 2020 - May. 2022")
@@ -233,7 +239,7 @@ elif section == "Work History":
     """
     )
 
-    # --- JOB 6
+    # --- JOB 7
     st.write('\n')
     st.write("🚧", "**Data Analyst | CAFOD UK | Jos Plateau State Nigeria**")
     st.write("Mar. 2020 - May. 2022")
@@ -247,7 +253,7 @@ elif section == "Work History":
 
 # --- PROJECTS & ACCOMPLISHMENTS ---
 elif section == "Projects & Accomplishments":
-    st.subheader("Projects & Accomplishments")
+    section_header("Projects & Accomplishments")
     st.write("---")
     project_images = {
         "🏆 Analytical Dashboards - Various Analysis": "power_bi_dashboards.png",
@@ -267,4 +273,4 @@ elif section == "Projects & Accomplishments":
 # --- PERSONALIZED MESSAGE ---
 st.write('\n')
 st.write("---")
-st.write("Thank you for visiting my digital resume. Feel free to explore my projects and reach out to me through my social media channels!")
+st.write("Thank you for visiting my resume. Feel free to explore my projects and reach out to me through my social media channels or email!")
