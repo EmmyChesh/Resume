@@ -50,8 +50,8 @@ with st.sidebar:
         icons=['person', 'briefcase', 'clipboard', 'building', 'star'],
         default_index=0,
         styles={
-            "container": {"padding": "5px", "background-color": "#333"},
-            "icon": {"color": "white", "font-size": "25px"},
+            "container": {"padding": "5px", "background-color": "#00000d"},
+            "icon": {"color": "white", "font-size": "20px"},
             "nav-link": {"font-size": "20px", "text-align": "left", "margin": "0px", "--hover-color": "#555", "color": "white"},
             "nav-link-selected": {"background-color": "#007bff", "color": "white"},
         }
