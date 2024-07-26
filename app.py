@@ -51,7 +51,7 @@ with st.sidebar:
         default_index=0,
         styles={
             "container": {"padding": "5px", "background-color": "#00000d"},
-            "icon": {"color": "white", "font-size": "20px"},
+            "icon": {"color": "white", "font-size": "22px"},
             "nav-link": {"font-size": "20px", "text-align": "left", "margin": "0px", "--hover-color": "#555", "color": "white"},
             "nav-link-selected": {"background-color": "#007bff", "color": "white"},
         }
@@ -244,4 +244,4 @@ elif selected == "Projects & Accomplishments":
 # --- PERSONALIZED MESSAGE ---
 st.write('\n')
 st.write("---")
-st.write("Thank you for visiting my digital resume. Feel free to explore my projects and reach out to me through my social media channels!")
+st.write("Thank you for visiting my digital resume. Feel free to explore my projects and reach out to me through my social media channels or mail!")
