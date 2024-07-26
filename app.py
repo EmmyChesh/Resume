@@ -1,12 +1,13 @@
 from pathlib import Path
 import streamlit as st
 from PIL import Image
+from streamlit_option_menu import option_menu
 
 # --- PATH SETTINGS ---
 current_dir = Path(__file__).parent if "__file__" in locals() else Path.cwd()
 css_file = current_dir / "styles" / "main.css"
 resume_file = current_dir / "assets" / "CV.pdf"
-profile_pic = current_dir / "assets" / "profile-pic.png"
+profile_pic_path = current_dir / "assets" / "profile-pic.png"
 project_images_dir = current_dir / "assets" / "project_images"
 
 # --- GENERAL SETTINGS ---
@@ -39,53 +40,29 @@ with open(css_file) as f:
     st.markdown("<style>{}</style>".format(f.read()), unsafe_allow_html=True)
 with open(resume_file, "rb") as pdf_file:
     PDFbyte = pdf_file.read()
-profile_pic = Image.open(profile_pic)
+profile_pic = Image.open(profile_pic_path)
 
 # --- SIDEBAR NAVIGATION ---
-st.sidebar.markdown(
-    """
-    <style>
-    .sidebar .sidebar-content {
-        font-size: 20px;
-        font-weight: bold;
-    }
-    .sidebar .sidebar-content .stRadio>div {
-        margin-top: 10px;
-    }
-    .sidebar .sidebar-content .stRadio>div>label {
-        display: block;
-        padding: 10px;
-        border-radius: 5px;
-        border: 2px solid transparent;
-        background-color: #f0f0f0;
-        color: #333;
-        cursor: pointer;
-    }
-    .sidebar .sidebar-content .stRadio>div>label:hover {
-        background-color: #e0e0e0;
-    }
-    .sidebar .sidebar-content .stRadio>div>label.stRadioActive {
-        background-color: #007bff;
-        color: #fff;
-        border-color: #007bff;
-    }
-    </style>
-    """,
-    unsafe_allow_html=True
-)
-
-st.sidebar.title("Resume Sections")
-section = st.sidebar.radio(
-    "Go to",
-    ["Introduction", "Experience & Qualifications", "Skills", "Work History", "Projects & Accomplishments"]
-)
+with st.sidebar:
+    selected = option_menu(
+        'Resume Sections',
+        ['Introduction', 'Experience & Qualifications', 'Skills', 'Work History', 'Projects & Accomplishments'],
+        icons=['person', 'briefcase', 'clipboard', 'building', 'star'],
+        default_index=0,
+        styles={
+            "container": {"padding": "5px", "background-color": "#f0f0f0"},
+            "icon": {"color": "blue", "font-size": "25px"},
+            "nav-link": {"font-size": "20px", "text-align": "left", "margin": "0px", "--hover-color": "#e0e0e0"},
+            "nav-link-selected": {"background-color": "#007bff", "color": "white"},
+        }
+    )
 
 # Function to apply custom styles to headers
 def section_header(header):
     st.markdown(f"<h2 style='color:blue;'>{header}</h2>", unsafe_allow_html=True)
 
-# --- HERO SECTION ---
-if section == "Introduction":
+# --- CONTENT BASED ON SELECTION ---
+if selected == "Introduction":
     st.image(profile_pic, width=120, use_column_width=True)
     st.title(NAME)
     st.write(DESCRIPTION)
@@ -96,7 +73,6 @@ if section == "Introduction":
         file_name=resume_file.name,
         mime="application/octet-stream",
     )
-
     st.write('\n')
     st.markdown(
         """
@@ -117,10 +93,8 @@ if section == "Introduction":
         """,
         unsafe_allow_html=True,
     )
-    
 
-# --- EXPERIENCE & QUALIFICATIONS ---
-elif section == "Experience & Qualifications":
+elif selected == "Experience & Qualifications":
     section_header("Experience & Qualifications")
     st.write(
         """
@@ -133,8 +107,7 @@ elif section == "Experience & Qualifications":
     """
     )
 
-# --- SKILLS ---
-elif section == "Skills":
+elif selected == "Skills":
     section_header("Skills")
     skills = [
         ("👨‍💻 Programming", "Python"),
@@ -152,12 +125,11 @@ elif section == "Skills":
         st.write(f"<p>- {skill}: {details}</p>", unsafe_allow_html=True)
     st.markdown("</div>", unsafe_allow_html=True)
 
-# --- WORK HISTORY ---
-elif section == "Work History":
+elif selected == "Work History":
     section_header("Work History")
     st.write("---")
 
-    # --- JOB 1
+# --- JOB 1
     st.write("🚧", "**Lead Data Scientist | BlueHouse Technologies**")
     st.write("Sept. 2023 - Present")
     st.write(
@@ -251,8 +223,7 @@ elif section == "Work History":
     """
     )
 
-# --- PROJECTS & ACCOMPLISHMENTS ---
-elif section == "Projects & Accomplishments":
+elif selected == "Projects & Accomplishments":
     section_header("Projects & Accomplishments")
     st.write("---")
     project_images = {
@@ -269,8 +240,3 @@ elif section == "Projects & Accomplishments":
         st.write(f"### {project}")
         st.image(Image.open(project_image), width=300)
         st.write(f"[Link to project]({details})")
-
-# --- PERSONALIZED MESSAGE ---
-st.write('\n')
-st.write("---")
-st.write("Thank you for visiting my resume. Feel free to explore my projects and reach out to me through my social media channels or email!")
