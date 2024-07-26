@@ -50,9 +50,9 @@ with st.sidebar:
         icons=['person', 'briefcase', 'clipboard', 'building', 'star'],
         default_index=0,
         styles={
-            "container": {"padding": "5px", "background-color": "#f0f0f0"},
-            "icon": {"color": "blue", "font-size": "25px"},
-            "nav-link": {"font-size": "20px", "text-align": "left", "margin": "0px", "--hover-color": "#e0e0e0"},
+            "container": {"padding": "5px", "background-color": "#333"},
+            "icon": {"color": "white", "font-size": "25px"},
+            "nav-link": {"font-size": "20px", "text-align": "left", "margin": "0px", "--hover-color": "#555", "color": "white"},
             "nav-link-selected": {"background-color": "#007bff", "color": "white"},
         }
     )
@@ -129,7 +129,7 @@ elif selected == "Work History":
     section_header("Work History")
     st.write("---")
 
-# --- JOB 1
+    # --- JOB 1
     st.write("🚧", "**Lead Data Scientist | BlueHouse Technologies**")
     st.write("Sept. 2023 - Present")
     st.write(
