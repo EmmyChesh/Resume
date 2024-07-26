@@ -240,3 +240,8 @@ elif selected == "Projects & Accomplishments":
         st.write(f"### {project}")
         st.image(Image.open(project_image), width=300)
         st.write(f"[Link to project]({details})")
+
+# --- PERSONALIZED MESSAGE ---
+st.write('\n')
+st.write("---")
+st.write("Thank you for visiting my digital resume. Feel free to explore my projects and reach out to me through my social media channels!")
