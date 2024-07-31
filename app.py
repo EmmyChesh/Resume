@@ -30,7 +30,8 @@ PROJECTS = {
     "🏆 Car Price Predictor Web App": "https://emmycheshpredictorapp.streamlit.app",
     "🏆 Diamond Price Predictor Web App": "https://emmychesh-diamonds.streamlit.app",
     "🏆 Image Attendance and Security System Register": "https://github.com/EmmyChesh/Image-Attendance-and-Security-System",
-    "🏆 Lip Reading Deep Learning App": "https://github.com/EmmyChesh/Lip-Reading-Deep-Learning-Model/tree/main/app"
+    "🏆 Lip Reading Deep Learning App": "https://github.com/EmmyChesh/Lip-Reading-Deep-Learning-Model/tree/main/app",
+    "🏆 Alzheimer Disease Prediction Web App": "https://emmychesh-alzheimer.streamlit.app"
 }
 
 st.set_page_config(page_title=PAGE_TITLE, page_icon=PAGE_ICON)
@@ -233,6 +234,7 @@ elif selected == "Projects & Accomplishments":
         "🏆 Diamond Price Predictor Web App": "diamond_price_predictor.jpg",
         "🏆 Image Attendance and Security System Register": "image_attendance_register.jpeg",
         "🏆 Lip Reading Deep Learning App": "lip_reading.jpg",
+        "🏆 Alzheimer Disease Prediction Web App": "alzheimer.jpg"
     }
 
     for project, details in PROJECTS.items():
