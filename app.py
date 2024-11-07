@@ -130,6 +130,20 @@ elif selected == "Work History":
     section_header("Work History")
     st.write("---")
 
+
+     # --- JOB 1
+    st.write("🚧", "**Data Science Instructor | Abuja Data School**")
+    st.write("Sept. 2024 - Present")
+    st.write(
+        """
+    ► Create and teach detailed courses in Excel, Power BI, SQL, Python, and SPSS to equip students with core data analytics skills.
+► Design and enhance training materials to ensure content is accurate, clear, and engaging.
+► Keep courses up-to-date by incorporating the latest industry developments and trends.
+► Emphasize ethical data practices and industry standards to build a foundation for responsible analytics.
+► Guide and mentor students to develop critical analytical skills and technical knowledge to advance their careers in data analytics.
+    """
+    )
+    
     # --- JOB 1
     st.write("🚧", "**Lead Data Scientist | BlueHouse Technologies**")
     st.write("Sept. 2023 - Present")
@@ -146,7 +160,7 @@ elif selected == "Work History":
      # --- JOB 2
     st.write('\n')
     st.write("🚧", "**Data Analytics Instructor | The CoreStream Nigeria**")
-    st.write("Jun. 2024 - Present")
+    st.write("Jun. 2024 - Nov. 2024")
     st.write(
         """
    - ► Design and deliver comprehensive courses in Excel, Power BI, SQL, and Python to equip students with essential data analytics skills.
