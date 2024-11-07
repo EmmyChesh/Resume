@@ -136,10 +136,10 @@ elif selected == "Work History":
     st.write("Sept. 2024 - Present")
     st.write(
         """
-- ► Create and teach detailed courses in Excel, Power BI, SQL, Python, and SPSS to equip students with core data analytics skills.
+- ► Creating and delivering detailed courses in Excel, Power BI, SQL, Python, and SPSS to equip students with core data analytics skills.
 - ► Design and enhance training materials to ensure content is accurate, clear, and engaging.
 - ► Keep courses up-to-date by incorporating the latest industry developments and trends.
-- ► Emphasize ethical data practices and industry standards to build a foundation for responsible analytics.
+- ► Emphasizing ethical data practices and industry standards to build a foundation for responsible analytics.
 - ► Guide and mentor students to develop critical analytical skills and technical knowledge to advance their careers in data analytics.
     """
     )
