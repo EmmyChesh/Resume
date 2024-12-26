@@ -130,6 +130,17 @@ elif selected == "Work History":
     section_header("Work History")
     st.write("---")
 
+     # --- JOB 1
+    st.write("🚧", "**Data Analyst | Elint Systems Limited**")
+    st.write("Nov. 2024 - Present")
+    st.write(
+        """
+- ► Analyzed and interpreted complex datasets from oil and gas, energy, and aviation sectors to provide actionable insights and support strategic decisionmaking.
+- ► Designed and maintained dashboards, reports, and predictive models to monitor performance, forecast trends, and optimize operations.
+- ► Presented data-driven recommendations to stakeholders, enabling informed decisions while ensuring compliance with industry standards and data quality.
+    """
+    )
+
 
      # --- JOB 1
     st.write("🚧", "**Data Science Instructor | Abuja Data School**")
